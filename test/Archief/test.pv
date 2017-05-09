@@ -1,0 +1,40 @@
+size(620, 2000)
+background(1)
+
+import json
+
+with open('data.json') as infile:
+    data = json.load(infile)
+print len(data)
+print data[1]
+
+y = 0
+font(13)
+
+search = ["Seksueel overdraagbare aandoening","Seksueel fetisjisme","Homoseksualiteit","Zelfmoord","Aambei"]
+print search
+
+
+# for word in data:
+#     y = y + 24
+#     text(word['Regio'], 500, y + 16)
+#     for word in data:
+#         barwidth = word[search[1]]*2
+#         rect(275,y,barwidth,20)
+#         text(search[2], 10, y + 16)
+#         y= y + 24 
+        # maakt een overzicht van één topic van alle provincies
+y = 24        
+a = 0
+
+for word in data:
+    for word in data:
+        barwidth = word[search[a]]*3
+        rect(275,y,barwidth,20)
+        y = y + 24
+        print barwidth
+
+
+
+    
+    

@@ -1,0 +1,22 @@
+size(512, 512)
+background(1)
+text("Aambei", 10, 40)
+
+import json
+
+with open('data.json') as infile:
+    data = json.load(infile)
+print len(data)
+print data[0]
+
+y = 40
+font(15)
+
+for word in data:
+    y = y + 24
+    barwidth = word['Aambei']*4
+    rect(140,y,barwidth,20)
+    text(word['Regio'], 10, y + 16)
+
+    
+    

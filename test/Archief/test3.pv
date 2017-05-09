@@ -1,0 +1,14 @@
+size(512, 512)
+background(1)
+
+import json
+
+with open('data.json') as infile:
+    data = json.load(infile)
+print len(data)
+
+for word in data:
+    word = word['Regio']
+    print word
+    
+    
