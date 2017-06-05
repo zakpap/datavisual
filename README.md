@@ -6,6 +6,16 @@ What are people Googling that they don't want others to see?
 
 - illegal
 - shameful
+	bed wetting
+	erection problem
+	vaginal infection
+	hemroid
+	suicide
+	std
+	overweight
+	depression
+	closedted homosexuality
+	
 
 specific topics can be seen in countries, provinces and even cities
 I would like to take results from the netherlands.

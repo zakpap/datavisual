@@ -1,0 +1,65 @@
+size(2480,3500 )
+background(1)
+
+import json
+
+with open('new_data_place3.json') as infile:
+    data = json.load(infile)
+print len(data)
+print data[0]
+
+margin = 170
+size = 280
+spacing = 100
+
+for x in range(6):
+    for y in range(7):
+        xpos = margin + ((size + spacing) * x)
+        ypos = margin + ((size + spacing+40) * y)
+        index = (y*5) + x
+        if index < len(data):
+            d = data[index]
+        
+
+        fill('green',0.2)
+        arc(xpos + size/2, ypos + size/2, d['STD']*1.3)
+        fill('red',0.2)
+        arc(xpos + size/2, ypos + size/2, d['Depression']*1.3)
+        fill('yellow',0.2)
+        arc(xpos + size/2, ypos + size/2, d['Fetisjism']*1.3)
+        fill('blue',0.2)
+        arc(xpos + size/2, ypos + size/2, d['Hemorrhoid']*1.3)
+        fill("black")
+        text(d['Plaats'],xpos,ypos-50,font='akkurat')
+        #text(d['Inwoners'],xpos,ypos-20,font='akkurat')
+
+rect(160,3200,2150,2)
+text('RATHER NOT',160,3295,font='akkurat-light',size=60)
+text('TALK ABOUT IT',160,3370,font='akkurat-light',size=60)
+
+fill('red',0.20)
+arc(2070,3240,15)
+fill('black')
+text("Depression",2100,3250,size= 30,font='akkurat-light')
+
+fill('green',0.20)
+arc(2070,3290,15)
+fill('black')
+text("STD",2100,3300,size= 30,font='akkurat-light')
+            
+fill('yellow',0.30)
+arc(2070,3340,15)
+fill('black')
+text("Fetisjism",2100,3350,size= 30,font='akkurat-light')
+            
+fill('blue',0.20)
+arc(2070,3391,15)
+fill('black')
+text("Hemorrhoid",2100,3400,size= 30,font='akkurat-light')
+
+
+        
+
+        #rect(xpos, ypos, size, size)
+
+

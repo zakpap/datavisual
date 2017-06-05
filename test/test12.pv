@@ -1,0 +1,26 @@
+size(2480,3500 )
+background(1)
+
+import json
+
+with open('new_data_place.json') as infile:
+    data = json.load(infile)[20]
+print len(data)
+print data
+
+sizex = 2480
+sizey = 3500
+
+
+
+
+fill('green',0.2)
+arc(sizex/2-400, sizey/2-400, data[' aambei']*7)
+fill('red',0.2)
+arc(sizex/2+400, sizey/2-400, data[' soa']*7)
+fill('blue',0.2)
+arc(sizex/2-400, sizey/2+400, data['depressie']*5)
+fill('yellow',0.2)
+arc(sizex/2+400, sizey/2+400, data[' seksueel fetisjisme']*5)
+fill('black')
+text(data['Plaats'],400,2800,size=100)

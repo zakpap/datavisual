@@ -1,0 +1,44 @@
+size(620, 6000)
+background(1)
+
+import json
+
+with open('new_data_place.json') as infile:
+    data = json.load(infile)
+print len(data)
+print data[37]
+
+y = 0
+z = 0
+a = 0
+b = 0
+for word in data:
+    y = y + 150
+    stroke('red')
+    nofill()
+    barwidth = word[' soa']
+    offset = barwidth / 2
+    oval(350 + offset,y + offset,barwidth,barwidth)
+    fill(0)
+    text(word['Plaats'],20,y+90)
+    
+for word in data:
+    z = z + 150
+    stroke('blue')
+    nofill()
+    barwidth = word['depressie']
+    oval(350 + offset,z + offset,barwidth,barwidth)
+    
+for word in data:
+    a = a + 150
+    stroke('green')
+    nofill()
+    barwidth = word[' seksueel fetisjisme']
+    oval(350 + offset,a + offset,barwidth,barwidth)
+        
+for word in data:
+    b = b + 150
+    stroke('orange')
+    nofill()
+    barwidth = word[' aambei']
+    oval(350 + offset,b + offset,barwidth,barwidth)

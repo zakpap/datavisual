@@ -1,0 +1,50 @@
+size(2480,3500 )
+background(1)
+
+import json
+
+with open('new_data_place.json') as infile:
+    data = json.load(infile)
+print len(data)
+print data[37]
+
+
+
+
+
+margin = 150
+size = 375
+spacing = 75
+
+
+
+
+
+
+for x in range(5):
+    for y in range(7):
+        xpos = margin + ((size + spacing) * x)
+        ypos = margin + ((size + spacing) * y)
+        d=data[(y*5) + x]
+        
+
+        fill("grey",0.1)
+        stroke(None)
+        arc(xpos + size/2, ypos + size/2, size/2)
+        fill(None)
+        stroke(0.7)
+        stroke('red')
+        arc(xpos + size/2, ypos + size/2, d[' soa']*1.8)
+        stroke('blue')
+        arc(xpos + size/2, ypos + size/2, d['depressie']*1.6)
+        stroke('purple')
+        arc(xpos + size/2, ypos + size/2, d[' seksueel fetisjisme']*1.8)
+        stroke('green')
+        arc(xpos + size/2, ypos + size/2, d[' aambei']*1.7)
+        fill("black")
+        text(d['Plaats'],xpos,ypos-20)
+        
+
+        # rect(xpos, ypos, size, size)
+
+

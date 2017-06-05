@@ -1,0 +1,42 @@
+size(1754,2480 )
+background(1)
+
+import json
+
+with open('new_data_place5.json') as infile:
+    data = json.load(infile)
+print len(data)
+print data[0]
+
+margin = 145
+size =170
+spacing = 155
+
+for x in range(5):
+    for y in range(8):
+        xpos = margin + ((size + spacing) * x)
+        ypos = margin+100 + ((size + spacing) * y)
+        index = (y*5) + x
+        if index < len(data):
+            d = data[index]
+            
+    
+
+            fill('yellow',0.2)
+            arc(xpos + size/2, ypos + size/2, d['STD']*1.1)
+            fill('green',0.2)
+            arc(xpos + size/2, ypos + size/2, d['Depression']*1.1)
+            fill('red',0.2)
+            arc(xpos + size/2, ypos + size/2, d['Fetisjism']*1.1)
+            fill('blue',0.2)
+            arc(xpos + size/2, ypos + size/2, d['Hemorrhoid']*1.1)
+            fill("black")
+
+            text(d['Plaats'],xpos,ypos-68,size=21,font='akkurat-light')
+            text(d['Inwoners'],xpos,ypos-40, size=21,font='akkurat-light')
+text("table of contents",100,75,size=21,font='akkurat-light')
+rect(100,88,1554,1)
+        #rect(xpos, ypos, size, size)
+
+
+

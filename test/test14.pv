@@ -1,0 +1,29 @@
+size(2480,3500 )
+background(1)
+
+import json
+
+with open('new_data_place.json') as infile:
+    data = json.load(infile)[10]
+print len(data)
+print data
+
+sizex = 2480
+sizey = 3500
+
+
+
+
+fill('green',0.2)
+text("AAMBEI",sizex/2+data[' aambei']*7-50,sizey/2+data[' aambei']*7,size= data[' aambei'],font='akkurat-bold')
+fill('red',0.2)
+text("SOA",sizex/2+data[' soa']*7-50,sizey/2+data[' soa']*7,size= data[' soa'],font='akkurat-bold')
+fill('blue',0.2)
+text("DEPRESSIE",sizex/2+data['depressie']*7-50,sizey/2+data['depressie']*7,size= data['depressie'],font='akkurat-bold')
+fill('yellow',0.2)
+text("FETISJISME",sizex/2+data[' seksueel fetisjisme']*7-50,sizey/2+data[' seksueel fetisjisme']*7,size= data[' seksueel fetisjisme'],font='akkurat-bold')
+
+fill('black')
+text(data['Plaats'],sizex/2,3300,size=70,font='akkurat',align='center')
+
+

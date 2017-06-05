@@ -1,0 +1,49 @@
+size(2480,3500 )
+background(1)
+
+import json
+
+with open('new_data_place2.json') as infile:
+    data = json.load(infile)[17]
+print len(data)
+print data
+
+sizex = 2480
+sizey = 3500
+
+fill('green',0.2)
+arc(sizex/2, sizey/2, data['Hemorrhoid']/10*70)
+fill('red',0.2)
+arc(sizex/2, sizey/2, data['STD']/10*70)
+fill('blue',0.2)
+arc(sizex/2, sizey/2, data['Depression']/10*70)
+fill('yellow',0.2)
+arc(sizex/2, sizey/2, data['Fetisjism']/10*70)
+fill('black')
+
+if data['Depression'] > 0:
+    fill('blue',0.3)
+    rect(1710,2475,26,26)
+    fill('black')
+    text("Depression",1750,2500,size= 35,font='akkurat')
+
+if data['STD'] > 0:
+    fill('red',0.3)
+    rect(1710,2525,26,26)
+    fill('black')
+    text("STD",1750,2550,size= 35,font='akkurat')
+    
+if data['Fetisjism'] > 0:
+    fill('yellow',0.3)
+    rect(1710,2424.7,26,26)
+    fill('black')
+    text("Fetisjism",1750,2450,size= 35,font='akkurat')
+    
+if data['Hemorrhoid'] > 0:
+    fill('green',0.3)
+    rect(1710,2574.5,26,26)
+    fill('black')
+    text("Hemorrhoid",1750,2600,size= 35,font='akkurat')
+
+fill('black') 
+text(data['Plaats'],sizex/2,3300,size=70,font='akkurat',align='center')
